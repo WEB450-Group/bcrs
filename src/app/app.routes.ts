@@ -15,7 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceGraphComponent } from './service-graph/service-graph.component';
-import { ServiceRepareComponent } from './service-repare/service-repare.component';
+import { ServiceRepairComponent } from './service-repair/service-repair.component';
 import { FaqComponent } from './faq/faq.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { SigninComponent } from './security/signin/signin.component';
@@ -48,8 +48,8 @@ export const routes: Routes = [
         component: ServiceGraphComponent
       },
       {
-        path: 'service-repare',
-        component: ServiceRepareComponent
+        path: 'service-repair',
+        component: ServiceRepairComponent
       },
       {
         path: 'faq',
