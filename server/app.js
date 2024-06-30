@@ -24,8 +24,8 @@ const app = express()
 // Configure the app
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, '../dist/nodebucket')))
-app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')))
+app.use(express.static(path.join(__dirname, '../dist/bcrs')))
+app.use('/', express.static(path.join(__dirname, '../dist/bcrs')))
 
 
 // object literal named options for API testing
@@ -37,17 +37,17 @@ const options = {
       version: '1.0.0',
     },
   },
-  apis: ['./routes/employee-routes.js', './routes/security-routes']    
+  apis: ['./server/routes/*.js']    
 };
-
-//connect APIs
-app.use(["/api/employees", employeeRoutes], ["/api/security", securityRoutes]);
 
 //Create a new variable name openapiSpecification and call the swaggerJsdoc library using the options object literal.  For example, const openapiSpecification = swaggerJsdoc(options);
 const openapiSpecification = swaggerJsdoc(options);
 
 //Wire the openapi Specification variable to the app variable (see Exhibit D).
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
+
+//connect APIs
+app.use(["/api/employees", employeeRoutes], ["/api/security", securityRoutes]);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {
