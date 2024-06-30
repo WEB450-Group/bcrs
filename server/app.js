@@ -15,7 +15,7 @@ const createServer = require('http-errors')
 const path = require('path')
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-// const employeeRoutes = require('./routes/employee-routes');
+const employeeRoutes = require('./routes/employee-routes');
 // const securityRoutes = require('./routes/security-routes');
 
 // Create the Express app
@@ -27,16 +27,16 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, '../dist/bcrs')))
 app.use('/', express.static(path.join(__dirname, '../dist/bcrs')))
 
-// const options = {
-//   definition: {
-//     openapi: '3.0.0',
-//     info: {
-//       title: 'Bob\'s Computer Repair Shop API\'s',
-//       version: '1.0.0',
-//     },
-//   },
-//   apis: ['./routes/employee-routes.js', './routes/security-routes']    
-// };
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Bob\'s Computer Repair Shop API\'s',
+      version: '1.0.0',
+    },
+  },
+  apis: ['./routes/employee-routes.js', './routes/security-routes']    
+};
 
 //connect APIs
 // app.use("/api/employees", employeeRoutes);
@@ -49,7 +49,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')))
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 //connect APIs
-app.use(["/api/employees", employeeRoutes], ["/api/security", securityRoutes]);
+// app.use("/api/employees", employeeRoutes);
 
 // error handler for 404 errors
 app.use(function(req, res, next) {
