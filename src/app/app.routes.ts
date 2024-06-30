@@ -67,7 +67,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'security',
+    path: 'signin',
     component: SigninComponent
   },
   {

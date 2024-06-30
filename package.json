@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:bcrs": "node dist/bcrs/server/server.mjs",
-    "server": "nodemon dist/bcrs/server/server.mjs"
+    "prestart": "ng build",
+    "server": "nodemon --watch server --watch src --ignore dist --ignore node_modules --ext js,ts,json --exec \"node server/app.js\""
   },
   "private": true,
   "dependencies": {
