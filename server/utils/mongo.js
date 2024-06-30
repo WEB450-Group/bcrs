@@ -13,7 +13,7 @@ const {
   MongoClient
 } = require("mongodb");
 
-const MONGO_URL = '';
+const MONGO_URL = 'mongodb+srv://BCRS_User:s3cret@bcrs-cluster.djwllrd.mongodb.net/?retryWrites=true&w=majority&appName=BCRS-Cluster';
 
 const mongo = async (operations, next) => {
 
@@ -25,7 +25,7 @@ const mongo = async (operations, next) => {
       useUnifiedTopology: true,
     });
     
-    const db = client.db("nodebucket");
+    const db = client.db("BCRS_DB");
     console.log("Connected to the database!");
 
     await operations(db);

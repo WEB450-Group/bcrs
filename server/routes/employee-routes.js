@@ -7,3 +7,5 @@
 ; Description: Employee Routes
 ;===========================================
 */
+'use strict';
+
