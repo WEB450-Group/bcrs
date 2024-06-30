@@ -19,6 +19,7 @@ import { ServiceRepairComponent } from './service-repair/service-repair.componen
 import { FaqComponent } from './faq/faq.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { SigninComponent } from './security/signin/signin.component';
+import { RegistrationComponent } from './registration/registration.component'
 
 export const routes: Routes = [
   {
@@ -42,6 +43,10 @@ export const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'registration',
+        component: RegistrationComponent
       },
       {
         path: 'service-graph',
